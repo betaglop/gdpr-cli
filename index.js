@@ -27,7 +27,9 @@ app
   .option('-a, --analytics', 'checks for Google Analytics & Piwik')
   .option('-t, --tracking', 'checks for Social Media tracking & embeds')
   .option('-c, --cdn', 'checks for Content Delivery Networks')
-  .option('-k, --cookies [expiration delay, in month]', 'checks for cookies lifetime (< 13 month by defaut)', false)
+  .option('-k, --cookies [expiration delay, in month]', 'checks for cookies and their lifetime (< 13 month by defaut)', false)
+  .option('-e, --externals', 'checks for external resources')
+  .option('-o, --video', 'checks for embedded external videos')
   //.option('-r, --recursive', 'tries to follow links to check every internal site', false)
   .action((url, args) => {
     // Error Handling
@@ -55,6 +57,8 @@ app
     if (args.parent.nfz) tasks.new('nfz');
     if (args.ssl) tasks.new('ssl');
     if (args.cookies) tasks.new('cookies');
+    if (args.externals) tasks.new('externals');
+    if (args.externals) tasks.new('videos');
     if (args.fonts) tasks.new('fonts');
     if (args.prefetching) tasks.new('prefetching');
     if (args.analytics) tasks.new('analytics');
