@@ -11,7 +11,10 @@
   "bin": {
     "gdpr": "index.js"
   },
-  "repository": "https://github.com/betaglop/gdpr-cli.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/betaglop/gdpr-cli.git"
+  },
   "author": "Mirko Schubert <mirkoschubert@gmail.com>",
   "contributors": ["Baptiste LARVOL-SIMON (http://www.e-glop.net/)"],
   "license": "MIT",
